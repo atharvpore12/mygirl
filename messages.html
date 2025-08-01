@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Messages | For Samaa</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .message-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .message-card {
+      background: rgba(255, 215, 0, 0.06);
+      border: 1px solid #ffd70055;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      color: #ffd700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0 12px #ffd70022;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .message-card:hover {
+      box-shadow: 0 0 20px #ffd70088;
+    }
+
+    .message-hidden {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.4s ease;
+    }
+
+    .message-card.revealed .message-hidden {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .message-hidden p {
+      margin: 0;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔥 Navbar -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <span class="logo">❤️ For Samaa</span>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="memories.html">Memories</a>
+        <a href="messages.html">Messages</a>
+        <a href="about-us.html">About Us</a>
+        <a href="places.html">Places</a>
+        <a href="countdown.html">Countdown</a>
+          <a href="promise.html">Promises</a>
+           <a href="rewind.html">Rewind</a>
+           <a href="radio.html">Radio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container fade-in">
+    <h1 class="gold-text">💌 Hidden Messages for You</h1>
+    <p style="text-align:center; color:#fff;">Tap each card to reveal a message made just for you, Sama 🥺✨</p>
+
+    <div class="message-grid">
+
+      <div class="message-card">
+        Tap to reveal 💬
+        <div class="message-hidden">
+          <p>You are the best part of my day, every day 💛</p>
+        </div>
+      </div>
+
+      <div class="message-card">
+        Tap to reveal 💬
+        <div class="message-hidden">
+          <p>Even when we’re apart, you're with me in every heartbeat 💓</p>
+        </div>
+      </div>
+
+      <div class="message-card">
+        Tap to reveal 💬
+        <div class="message-hidden">
+          <p>You're not just my love, you're my peace, my home 🏠</p>
+        </div>
+      </div>
+
+      <div class="message-card">
+        Tap to reveal 💬
+        <div class="message-hidden">
+          <p>I miss you more than words could ever explain 🥹</p>
+        </div>
+      </div>
+
+      <div class="message-card">
+        Tap to reveal 💬
+        <div class="message-hidden">
+          <p>Can't wait to see your smile again, my golden star 🌟</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 – These messages will live forever in our hearts 💛</p>
+  </footer>
+
+  <script>
+    // Reveal message on click
+    document.querySelectorAll(".message-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        card.classList.toggle("revealed");
+      });
+    });
+  </script>
+</body>
+</html>
