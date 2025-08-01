@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Countdown | For Samaa</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .countdown-wrapper {
+      text-align: center;
+      padding: 40px 20px;
+      color: #fff;
+    }
+
+    .countdown-title {
+      font-size: 2rem;
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    .countdown-sub {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .countdown-box {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .time-block {
+      background: rgba(255, 215, 0, 0.08);
+      border: 1px solid #ffd70055;
+      border-radius: 12px;
+      padding: 20px;
+      width: 100px;
+      box-shadow: 0 0 12px #ffd70033;
+    }
+
+    .time-block h2 {
+      font-size: 2rem;
+      margin: 0;
+      color: #ffd700;
+    }
+
+    .time-block p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔥 Navbar -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <span class="logo">❤️ For Samaa</span>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="memories.html">Memories</a>
+        <a href="messages.html">Messages</a>
+        <a href="about-us.html">About Us</a>
+        <a href="countdown.html">Countdown</a>
+         <a href="places.html">Places</a>
+           <a href="promise.html">Promises</a>
+            <a href="rewind.html">Rewind</a>
+            <a href="radio.html">Radio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container fade-in">
+    <div class="countdown-wrapper">
+      <h1 class="countdown-title">⏳ Countdown to 1st Anniversary</h1>
+      <p class="countdown-sub">1st Jan 2026 — One golden year with you 💛</p>
+
+      <div class="countdown-box">
+        <div class="time-block">
+          <h2 id="days">--</h2>
+          <p>Days</p>
+        </div>
+        <div class="time-block">
+          <h2 id="hours">--</h2>
+          <p>Hours</p>
+        </div>
+        <div class="time-block">
+          <h2 id="minutes">--</h2>
+          <p>Minutes</p>
+        </div>
+        <div class="time-block">
+          <h2 id="seconds">--</h2>
+          <p>Seconds</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 – Counting every second till we celebrate 1 year together 🕰️💖</p>
+  </footer>
+
+  <script>
+    const anniversaryDate = new Date("Jan 1, 2026 00:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = anniversaryDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+    }, 1000);
+  </script>
+</body>
+</html>
