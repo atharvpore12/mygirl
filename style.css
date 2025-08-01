@@ -1,0 +1,321 @@
+body {
+  margin: 0;
+  background: #000000;
+  color: #ffd700;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  padding: 10vh 5vw;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.gold-text {
+  color: #ffd700;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.letter-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #f7f7f7;
+}
+
+.counter {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #ffdd77;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: #ffd700aa;
+  font-style: italic;
+  font-size: 0.95rem;
+  z-index: 2;
+}
+
+/* Cursor */
+.cursor {
+  width: 12px;
+  height: 12px;
+  background: #ffd700;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  box-shadow: 0 0 10px #ffd700;
+  z-index: 3;
+}
+
+/* Fade In */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.slideshow-container {
+  width: 90%;
+  max-width: 300px; /* was 400px, now reduced further */
+  margin: 2rem auto;
+  position: relative;
+  z-index: 2;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffd70066;
+}
+
+@media (max-width: 500px) {
+  .slideshow-container {
+    max-width: 250px;
+  }
+}
+
+
+/* Shooting Star Canvas */
+#shooting-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 💛 Relationship Counter */
+#relationship-counter {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #ffd700;
+  z-index: 2;
+  position: relative;
+}
+
+/* 🗣️ Whisper Messages */
+.whispers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.whispers span {
+  position: absolute;
+  color: #ffd700aa;
+  font-size: 1rem;
+  opacity: 0;
+  animation: floatWhisper 6s linear forwards;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+@keyframes floatWhisper {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+/* 🌟 Top Navbar */
+.top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12px 30px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #ffd70044;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffd700;
+  font-style: italic;
+}
+
+.nav-links a {
+  color: #ffd700bb;
+  margin: 0 12px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #ffd700aa;
+}
+
+/* Push content below navbar */
+main.container, .slideshow-container {
+  margin-top: 70px;
+}
+/* 💑 Featured Image */
+.featured-photo {
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto 0;
+  border: 2px solid #ffd70044;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #ffd70055;
+}
+
+.featured-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Responsive spacing under navbar */
+.container {
+  margin-top: 90px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* bigger than before */
+  gap: 15px;
+  margin-top: 30px;
+  padding: 0 15px;
+  z-index: 2;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 120px; /* slightly bigger */
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ffd70033;
+  box-shadow: 0 0 6px #ffd70055;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #ffd700aa;
+}
+
+/* 🌌 Image Modal Popup */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border: 2px solid #ffd70055;
+  box-shadow: 0 0 30px #ffd70088;
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #ffd700;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-modal:hover {
+  color: #fff;
+}
+
+/* 📜 Timeline Memories */
+.timeline {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
+  z-index: 2;
+}
+
+.memory-card {
+  background: rgba(255, 215, 0, 0.08);
+  border-left: 3px solid #ffd700aa;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ffd70022;
+  transition: transform 0.3s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px #ffd70055;
+}
+
+.memory-card h3 {
+  margin: 0;
+  color: #ffd700;
+  font-size: 1.1rem;
+}
+
+.memory-card p {
+  margin: 5px 0 0;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
